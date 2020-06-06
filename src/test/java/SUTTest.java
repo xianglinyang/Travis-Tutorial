@@ -1,4 +1,5 @@
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import org.junit.Test;
 
@@ -20,4 +21,19 @@ public class SUTTest {
         int result = sut.stringConcatenation(s1, s2);
         assertEquals(result, 2);
     }
+    @Test (expected=IllegalArgumentException.class)
+    public void testStringConcatenation_length45_throwsException() {
+    	String s1="aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
+    	String s2 = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
+    	SUT sut = new SUT();
+    	sut.stringConcatenation(s1, s2);
+    }
+    @Test
+    public void testStringConcatenation_length45_throwsException2() {
+    	String s1="aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
+    	String s2 = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
+    	SUT sut = new SUT();
+    	assertThrows(IllegalArgumentException.class,()->sut.stringConcatenation(s1, s2));
+    }
+    
 }
