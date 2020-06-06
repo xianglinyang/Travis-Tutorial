@@ -10,7 +10,7 @@ public class SUTTest {
         String s2 = "b";
         SUT sut = new SUT();
         int result = sut.stringConcatenation(s1, s2);
-        assertEquals(result, 0);
+        assertEquals(result, 1);
     }
 
     @Test
